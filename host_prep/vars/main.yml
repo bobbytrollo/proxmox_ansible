@@ -1,0 +1,13 @@
+---
+# vars file for host_prep
+
+  proxmox_hostname: 'pve1' # Set your hostname
+  proxmox_domain: 'localdomain' # Set your domain
+  proxmox_fqdn: '{{ proxmox_hostname }}.{{ proxmox_domain }}' # Combines the above variables for /etc/hosts task
+
+  proxmox_lan_ipv4:
+    address: "192.168.0.1" # Set your LAN address - this will be assigned to vmbr1
+    netmask: "255.255.255.0" # Set your netmask
+    
+  packages:
+    - openvswitch-switch

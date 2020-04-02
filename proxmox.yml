@@ -1,0 +1,14 @@
+---
+- hosts: proxmox
+  remote_user: root
+  become: true
+
+  vars:
+
+  roles:
+    - ansible-os-hardening
+    - host_prep
+    - proxmox
+
+
+

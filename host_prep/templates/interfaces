@@ -1,0 +1,25 @@
+source /etc/network/interfaces.d/*
+
+auto lo
+iface lo inet loopback
+
+allow-vmbr0 {{ ansible_default_ipv4.alias }}
+iface {{ ansible_default_ipv4.alias }} inet manual
+        ovs_type OVSPort
+        ovs_bridge vmbr0
+
+allow-ovs vmbr0
+iface vmbr0 inet static
+        address {{ ansible_default_ipv4.address }}
+        gateway {{ ansible_default_ipv4.gateway }}
+        netmask {{ ansible_default_ipv4.netmask }}
+        ovs_type OVSBridge
+        ovs_ports {{ ansible_default_ipv4.alias }}
+#WAN
+
+allow-ovs vmbr1
+iface vmbr1 inet static
+        address {{ proxmox_lan_ipv4.address }}
+        netmask {{ proxmox_lan_ipv4.netmask }}
+        ovs_type OVSBridge
+#LAN

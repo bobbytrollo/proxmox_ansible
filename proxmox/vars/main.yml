@@ -1,0 +1,8 @@
+---
+# vars file for proxmox
+  packages:
+    - proxmox-ve
+    - postfix
+    - open-iscsi
+
+  
