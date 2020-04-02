@@ -1,6 +1,6 @@
 # proxmox_ansible
 
-promox_ansible is a collection of Ansible roles and playbook that automate the installation of Proxmox and subsequent services.
+promox_ansible is a collection of Ansible roles and playbook that automate the installation of Proxmox.
 
 Current roles are:
 
